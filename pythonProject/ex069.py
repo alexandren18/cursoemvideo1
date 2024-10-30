@@ -1,30 +1,33 @@
 p18 = 0
 homem = 0
-mulher = 0
+mulher20 = 0
 while True:
-    idade = int(input("Qual é sua idade : "))
+    print("-" * 30)
+    print("CADASTRE UMA PESSOA")
+    print("-" * 30)
+    idade = int(input("Idade: "))
     while True:
-        sexo = str(input("[M/F]")).strip().upper()
+        sexo = str(input("Sexo: [M/F]")).strip().upper()
         if sexo == "M" or sexo == "F":
             break
-        else:
-             print("Entrada invalida! Por favor, digite M  para masculino ou F para feminino")
-    if idade > 18:
-            p18 += 1
+    if idade > 18 :
+        p18 += 1
     if sexo == "M":
-            homem += 1
-    elif sexo == "F" and idade < 20:
-        mulher += 1    
+        homem += 1
+    if idade < 20 and sexo == "F":
+        mulher20 += 1
     while True:
-        continuar = str(input("Quer continuar ? [S/N]")).strip().upper() 
-        if continuar == "N" or continuar == "S":
+        continuar = str(input("quer continuar: [S/N]")).strip().upper()
+        if continuar == "S" or continuar == "N":
             break
-        else:
-            print("Entrada invalida! Por favor, digite S para sim ou N para não.")
     if continuar == "N":
         break
 print(f"Total de pessoas com mais de 18 anos: {p18}")
-print(f"Ao todo temos {homem} homens cadastrados")
-print(f"E temos {mulher} mulheres com menos de 20 anos")
+print(f"Ao todo temos {homem} homens cadastrados.")
+print(f"E temos {mulher20}  mulheres com menos de 20 anos.")
+        
+        
+
+
 
         
